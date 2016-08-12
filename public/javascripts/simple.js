@@ -17,6 +17,7 @@ function trace(text) {
 function gotStream(stream){
   trace("Received local stream");
   vid1.src = webkitURL.createObjectURL(stream);
+  vid1.muted = true;
   vid1.play();
   localstream = stream;
   btn2.disabled = false;
