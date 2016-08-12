@@ -100,7 +100,9 @@ function start() {
             type: 'received_offer',
             data: description
         }));
-    }, null, mediaConstraints);
+    }, function (err) {
+        console.log(err);
+    }, mediaConstraints);
 }
 
 window.onload = function () {
