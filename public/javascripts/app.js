@@ -33,7 +33,6 @@ socket.onmessage = function (message) {
 
         case 'received_candidate' :
             console.log('received candidate');
-            pc.setRemoteDescription(new RTCSessionDescription(msg.data));
             var candidate = new RTCIceCandidate({
                 sdpMLineIndex: msg.data.label,
                 candidate: msg.data.candidate
