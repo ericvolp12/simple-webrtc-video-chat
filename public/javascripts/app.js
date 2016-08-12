@@ -37,9 +37,7 @@ socket.onmessage = function (message) {
                 sdpMLineIndex: msg.data.label,
                 candidate: msg.data.candidate
             });
-            pc.addIceCandidate(candidate, function(success){}, function(err){
-                console.log(err);
-            });
+            pc.addIceCandidate(candidate);
             break;
     }
 };
@@ -102,9 +100,7 @@ function start() {
             type: 'received_offer',
             data: description
         }));
-    }, function (err) {
-        console.log(err);
-    }, mediaConstraints);
+    }, null, mediaConstraints);
 }
 
 window.onload = function () {
