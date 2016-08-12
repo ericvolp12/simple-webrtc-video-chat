@@ -96,7 +96,9 @@ function start() {
       type: 'received_offer',
       data: description
     }));
-  }, null);
+  }, function(err){
+    console.log(err);
+  }, mediaConstraints);
 }
 
 window.onload = function() {
