@@ -79,6 +79,7 @@ function broadcast() {
         stream = s;
         pc.addStream(s);
         vid1.src = URL.createObjectURL(s);
+        vid1.muted = true;
         vid1.play();
         // initCall is set in views/index and is based on if there is another person in the room to connect to
         if (initCall)

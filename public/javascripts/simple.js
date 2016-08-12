@@ -25,7 +25,7 @@ function gotStream(stream){
 function start() {
   trace("Requesting local stream");
   btn1.disabled = true;
-  navigator.webkitGetUserMedia({audio:false, video:true},
+  navigator.webkitGetUserMedia({audio:true, video:true},
                                gotStream, function() {});
 }  
   
