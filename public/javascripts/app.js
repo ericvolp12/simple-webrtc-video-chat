@@ -19,7 +19,9 @@ socket.onmessage = function(message) {
           type: 'received_answer', 
           data: description
         }));
-      }, null, mediaConstraints);
+      }, function(err){
+        console.log(err);
+      }, mediaConstraints);
       break;
     case 'received_answer' :
       console.log('received answer');
