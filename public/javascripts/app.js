@@ -67,7 +67,7 @@ pc.onicecandidate = function(e) {
 
 pc.onaddstream = function(e) {
   console.log('start remote video stream');
-  vid2.src = webkitURL.createObjectURL(e.stream);
+  vid2.src = URL.createObjectURL(e.stream);
   vid2.play();
 };
 
@@ -76,7 +76,7 @@ function broadcast() {
   navigator.webkitGetUserMedia({audio: true, video: true}, function(s) {
     stream = s;
     pc.addStream(s);
-    vid1.src = webkitURL.createObjectURL(s);
+    vid1.src = URL.createObjectURL(s);
     vid1.play();
     // initCall is set in views/index and is based on if there is another person in the room to connect to
     if(initCall)
