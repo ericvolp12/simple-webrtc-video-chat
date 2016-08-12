@@ -96,7 +96,7 @@ function start() {
       type: 'received_offer',
       data: description
     }));
-  }, null, mediaConstraints);
+  }, null);
 }
 
 window.onload = function() {
